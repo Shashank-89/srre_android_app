@@ -1,0 +1,13 @@
+rn_expo_test/node_modules/
+rn_expo_test/.expo/
+rn_expo_test/npm-debug.*
+rn_expo_test/*.jks
+rn_expo_test/*.p8
+rn_expo_test/*.p12
+rn_expo_test/*.key
+rn_expo_test/*.mobileprovision
+rn_expo_test/*.orig.*
+rn_expo_test/web-build/
+
+# macOS
+rn_expo_test/.DS_Store
