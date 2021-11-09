@@ -52,9 +52,4 @@ class AuthViewModel : ViewModel() {
         }
     }
 
-//    fun isFirstLogin(context:Context): Boolean{
-//        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-//        sharedPreferences.getBoolean(, true)
-//    }
-
 }

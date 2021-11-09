@@ -6,8 +6,8 @@
 
 
     <fragment
-        android:id="@+id/onboardingMainFragment"
-        android:name="com.smartchef.ui.onboarding.OnboardingMainFragment"
+        android:id="@+id/onboardingFragment"
+        android:name="com.smartchef.ui.onboarding.OnboardingFragment"
         android:label="OnboardingMainFragment" />
 
     <fragment

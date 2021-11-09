@@ -15,4 +15,5 @@
     <string name="recipe_detail_ph">Recipe Detail</string>
     <string name="choose_ingredients">Choose Ingredients</string>
     <string name="select_ingredients_title">Choose your favourite ingredients</string>
+    <string name="next">next</string>
 </resources>

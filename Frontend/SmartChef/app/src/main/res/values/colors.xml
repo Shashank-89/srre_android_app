@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="img_place_holder_bg_light_grey">#CBCBCB</color>
+
+    <!--Primary Colors-->
+    <color name="green_800">#356859</color>
+    <color name="green_500">#37966F</color>
+    <color name="green_100">#B9E4C9</color>
+    <!--Secondary Colors-->
+    <color name="orange_800">#FD5523</color>
+    <color name="cream_50">#FFFBE6</color>
 </resources>
