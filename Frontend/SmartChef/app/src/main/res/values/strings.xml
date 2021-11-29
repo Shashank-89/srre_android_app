@@ -16,4 +16,9 @@
     <string name="choose_ingredients">Choose Ingredients</string>
     <string name="select_ingredients_title">Choose your favourite ingredients</string>
     <string name="next">next</string>
+    <string name="search">Search</string>
+    <string name="sugar_q">Sugar\n%1$f</string>
+    <string name="fat_q">Fat\n%1$f</string>
+    <string name="protein_q">Protein\n%1$f</string>
+    <string name="cal_q">Calories\n%1$f</string>
 </resources>

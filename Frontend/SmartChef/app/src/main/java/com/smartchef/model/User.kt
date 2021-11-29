@@ -1,4 +1,4 @@
-package com.smartchef.room
+package com.smartchef.model
 
 import androidx.room.*
 
@@ -16,9 +16,5 @@ data class User(
     @ColumnInfo(name = "last_name")
     val lastName: String?,
 
-    @ColumnInfo(name = "url")
-    val imgUrl: String?
-
-//    @Ignore var token
 )
 

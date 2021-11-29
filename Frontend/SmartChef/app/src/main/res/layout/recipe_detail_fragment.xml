@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream_50"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/guide1"
+        app:layout_constraintGuide_percent="0.15"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="description, guide3"/>
+
+    <View
+        android:id="@+id/desc_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="4dp"
+        android:background="@color/green_100"
+        app:layout_constraintLeft_toLeftOf="@id/guide_bg"
+        app:layout_constraintRight_toRightOf="@id/guide_bg"
+        app:layout_constraintTop_toTopOf="@+id/guide2"
+        app:layout_constraintBottom_toTopOf="@id/barrier1"/>
+
+    <View
+        android:id="@+id/guide_bg"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:elevation="4dp"
+        android:background="@color/green_800"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide1"
+        app:layout_constraintBottom_toBottomOf="@id/guide1"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textAlignment="center"
+        android:textColor="@color/orange_800"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toTopOf="@id/guide_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="e z roast chicken" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/lekton"
+        android:paddingBottom="16dp"
+        android:textAlignment="center"
+        android:elevation="6dp"
+        android:textColor="@color/green_800"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/guide_bg"
+        app:layout_constraintRight_toRightOf="@id/guide_bg"
+        app:layout_constraintTop_toBottomOf="@id/guide_bg"
+        tools:text="this spicy ramen is made with a egg and an assortment of toppings. i made this recipe up. when you prepare the ramen do not over-cook or else the noodles get really mushy and kinda gross tasting. but other than that enjoy this recipe." />
+
+    <TextView
+        android:id="@+id/cal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/cal_q"
+        android:textAlignment="center"
+        android:fontFamily="@font/lekton"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/green_800"
+        app:layout_constraintTop_toBottomOf="@id/desc_bg"
+        app:layout_constraintLeft_toLeftOf="@id/desc_bg"
+        app:layout_constraintRight_toLeftOf="@id/protein"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/protein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/protein_q"
+        android:textAlignment="center"
+        android:fontFamily="@font/lekton"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/green_800"
+        app:layout_constraintTop_toBottomOf="@id/desc_bg"
+        app:layout_constraintLeft_toRightOf="@id/cal"
+        app:layout_constraintRight_toLeftOf="@id/fat"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/fat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/fat_q"
+        android:textAlignment="center"
+        android:fontFamily="@font/lekton"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/green_800"
+        app:layout_constraintTop_toBottomOf="@id/desc_bg"
+        app:layout_constraintLeft_toRightOf="@id/protein"
+        app:layout_constraintRight_toLeftOf="@id/sugar"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/sugar_q"
+        android:textAlignment="center"
+        android:fontFamily="@font/lekton"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/green_800"
+        app:layout_constraintRight_toRightOf="@id/desc_bg"
+        app:layout_constraintTop_toBottomOf="@id/desc_bg"
+        app:layout_constraintLeft_toRightOf="@id/fat"
+        android:layout_marginTop="16dp"/>
+
+    <co.lujun.androidtagview.TagContainerLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:padding="10dp"
+        app:container_enable_drag="false"
+        app:horizontal_interval="10dp"
+        app:vertical_interval="10dp"
+        app:tag_clickable="false"
+        app:tag_theme="none"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

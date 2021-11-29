@@ -8,13 +8,19 @@
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.smartchef.ui.onboarding.OnboardingFragment"
-        android:label="OnboardingMainFragment" />
+        android:label="OnboardingMainFragment" >
+
+        <action
+            android:id="@+id/action_onboarding_to_search"
+            app:destination="@id/recipe_list"
+            app:popUpTo="@+id/recipe_list"/>
+
+    </fragment>
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.smartchef.ui.SearchFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/recipe_list"
+        android:name="com.smartchef.ui.RecipeListFragment"
+        android:label="search_main"/>
 
 
 </navigation>

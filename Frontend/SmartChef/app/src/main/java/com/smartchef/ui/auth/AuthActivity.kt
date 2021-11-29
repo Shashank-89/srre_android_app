@@ -13,12 +13,14 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.smartchef.BuildConfig
 import com.smartchef.R
 import com.smartchef.databinding.ActivityAuthBinding
+import com.smartchef.ui.onboarding.AppViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 open class AuthActivity : AppCompatActivity() {
 
     private val authViewModel by viewModels<AuthViewModel>()
+    private val appViewModel by viewModels<AppViewModel>()
     private lateinit var binding: ActivityAuthBinding
 
     private val signInLauncher = registerForActivityResult(
@@ -48,7 +50,6 @@ open class AuthActivity : AppCompatActivity() {
                     createSignInIntent()
                 }
             }
-
         })
     }
 
@@ -67,6 +68,12 @@ open class AuthActivity : AppCompatActivity() {
     }
 
 
+    fun signOut() {
+        AuthUI.getInstance()
+            .signOut(this)
+    }
+
+
     private fun onSignInResult(result : FirebaseAuthUIAuthenticationResult){
         if(result.resultCode == RESULT_OK){
             val nav = findNavController(R.id.nav_host_fragment)
@@ -74,9 +81,11 @@ open class AuthActivity : AppCompatActivity() {
             if(result.idpResponse?.isNewUser == true){
                 navGraph.startDestination = R.id.onboardingFragment
             }else{
-                navGraph.startDestination = R.id.searchFragment
+                navGraph.startDestination = R.id.onboardingFragment
             }
             nav.graph = navGraph
         }
     }
+
+
 }

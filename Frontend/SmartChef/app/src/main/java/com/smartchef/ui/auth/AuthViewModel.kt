@@ -23,6 +23,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 import com.smartchef.BuildConfig
+import com.smartchef.model.Profile
 
 class AuthViewModel : ViewModel() {
 
@@ -31,6 +32,8 @@ class AuthViewModel : ViewModel() {
     }
 
     var token:String? = null
+
+    var profile: Profile? = null
 
     val authenticationState = FirebaseUserLiveData().map { user ->
         if (user != null) {

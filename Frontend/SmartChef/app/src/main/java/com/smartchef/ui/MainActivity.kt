@@ -13,7 +13,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.lifecycle.ViewModelProvider
 import com.smartchef.R
-import com.smartchef.UserViewModel
 import com.smartchef.databinding.ActivityMainBinding
 import com.smartchef.ui.auth.AuthActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,8 +24,6 @@ class MainActivity : AuthActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navView: NavigationView
 
-    private lateinit var viewModel: UserViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,13 +31,13 @@ class MainActivity : AuthActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel = ViewModelProvider(this, SavedStateViewModelFactory(this.application, this)).get(
-            UserViewModel::class.java)
-
-        viewModel.user.observe(this,{
-            //TODO update UI
-            Log.i("MainActivity", "userInfo : ${it.toString()}")
-        });
+//        viewModel = ViewModelProvider(this, SavedStateViewModelFactory(this.application, this)).get(
+//            UserViewModel::class.java)
+//
+//        viewModel.user.observe(this,{
+//            //TODO update UI
+//            Log.i("MainActivity", "userInfo : ${it.toString()}")
+//        });
 
         setSupportActionBar(binding.appBarMain.toolbar)
         binding.appBarMain.fab.setOnClickListener { view ->
