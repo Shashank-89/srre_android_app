@@ -32,8 +32,10 @@ object RetrofitModule {
         logging.level = HttpLoggingInterceptor.Level.BODY
         val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor(logging)
+
         return Retrofit.Builder()
-            .baseUrl("https://b866-20-120-216-46.ngrok.io")
+//        https://4c3f-20-120-216-46.ngrok.io/search
+            .baseUrl("https://50ec-20-120-216-46.ngrok.io")
             .client(httpClient.build())
             .addConverterFactory(GsonConverterFactory.create(gson))
     }

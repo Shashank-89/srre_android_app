@@ -37,7 +37,12 @@ class OnboardingRepository @Inject constructor(
     }.transform {  }
 
     fun getAllTags(): Flow<DataState<List<String>>> = flow {
-        val tagList = appContext.assets.open("tags.csv").bufferedReader().readLines()
+        val rawTagList = appContext.assets.open("tags.csv").bufferedReader().readLines()
+        val tagList = mutableListOf<String>()
+        rawTagList.onEach {
+            if(it.isNotEmpty()) tagList.add(it)
+        }
+        Log.e("tagsBug", "taglist.size : " + tagList.size);
         emit(DataState.Success(tagList))
     }
 
@@ -68,6 +73,11 @@ class OnboardingRepository @Inject constructor(
             "Spanish",
             "American",
             "Scottish",
+            "low-sodium",
+            "low-carb",
+            "lactose",
+            "low-fat",
+            "low-cholesterol",
             "british-columbian",
             "Thai",
             "Japanese",

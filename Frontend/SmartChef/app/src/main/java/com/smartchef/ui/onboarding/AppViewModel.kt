@@ -73,9 +73,15 @@ class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository
                     obRepo.getSelectedIngredients().onEach {  }
                 }
 
-                is GetTags -> obRepo.getAllTags()
+                is GetTags -> {
+                    obRepo.getAllTags().onEach { dataStateTags ->
+                        _dataStateTags.value = dataStateTags
+                    }.launchIn(viewModelScope)
+                }
 
-                is GetSelectedTags -> obRepo
+                is GetSelectedTags -> {
+
+                }
 
                 is GetCuisines -> {
                     obRepo.getAllTypesOfCuisines()

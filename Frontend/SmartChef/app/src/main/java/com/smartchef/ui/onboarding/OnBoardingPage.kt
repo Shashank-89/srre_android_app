@@ -34,6 +34,7 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
 
     private var position = 0
     private var onboarding = false
+    private lateinit var appViewModel: AppViewModel
     private lateinit var adapter: TISearchAdapter
     private lateinit var binding: OnBoardingPageBinding
 
@@ -123,7 +124,7 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val appViewModel = ViewModelProvider(requireActivity())[AppViewModel::class.java]
+        appViewModel = ViewModelProvider(requireActivity())[AppViewModel::class.java]
 
         when(position){
             0 -> {
@@ -151,7 +152,17 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
             1 -> {
 
                 if(onboarding){
-                    appViewModel.dataStateCuisines.observe(viewLifecycleOwner, { dataState ->
+//                    appViewModel.dataStateCuisines.observe(viewLifecycleOwner, { dataState ->
+//                        when(dataState){
+//                            is DataState.Error -> TODO()
+//                            is DataState.Loading -> TODO()
+//                            is DataState.Success -> {
+//                                adapter.data = dataState.data
+//                            }
+//                        }
+//                    })
+
+                    appViewModel.dataStateTags.observe(viewLifecycleOwner, { dataState ->
                         when(dataState){
                             is DataState.Error -> TODO()
                             is DataState.Loading -> TODO()
@@ -194,19 +205,21 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
 
             }
         }
+    }
 
+    override fun onStart() {
+        super.onStart()
         when(position){
             0 -> {
                 appViewModel.setStateEvent(AppViewModel.QueryEvent.GetIngredients)
                 appViewModel.setStateEvent(AppViewModel.QueryEvent.GetIngredientSelections)
             }
             1 -> {
-                appViewModel.setStateEvent(AppViewModel.QueryEvent.GetCuisines)
-                appViewModel.setStateEvent(AppViewModel.QueryEvent.GetCuisinesSelections)
+                appViewModel.setStateEvent(AppViewModel.QueryEvent.GetTags)
+//                appViewModel.setStateEvent(AppViewModel.QueryEvent.GetSelectedTags)
             }
         }
     }
-
 
     override fun getSelections(): HashMap<String, Boolean> {
         return adapter?.selections

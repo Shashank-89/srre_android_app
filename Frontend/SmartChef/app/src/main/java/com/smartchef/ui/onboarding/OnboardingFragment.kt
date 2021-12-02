@@ -46,7 +46,7 @@ class OnboardingFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
         val appViewModel = ViewModelProvider(requireActivity())[AppViewModel::class.java]
         binding.vp2.adapter = OnboardingAdapter(this, 2, true)
-        binding.vp2.isUserInputEnabled = false //preventing swipe gesture
+//        binding.vp2.isUserInputEnabled = false //preventing swipe gesture
         binding.vp2.registerOnPageChangeCallback(onPageChangeCallback)
 
         binding.next.setOnClickListener(View.OnClickListener {
@@ -59,6 +59,7 @@ class OnboardingFragment : Fragment(){
                 //tags
                 val page = childFragmentManager.findFragmentByTag("f" + binding.vp2.currentItem) as OnBoardingPage
                 appViewModel.setTagsParam(page.getSelections(), page.getExclusions())
+                binding.vp2.setCurrentItem(0, false)
                 findNavController().navigate(R.id.action_onboarding_to_search)
             }
         })

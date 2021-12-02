@@ -57,10 +57,5 @@ class SearchFragment : Fragment(R.layout.search_fragment){
         val search = gson.toJson(profile).toString()
         binding.title.setText(search)
 
-//        val database = FirebaseDatabase.getInstance()
-//        database.setLogLevel(Logger.Level.DEBUG)
-//        val myRef = database.getReference("profile")
-//        myRef.setValue("Hello, World!")
-
     }
 }
