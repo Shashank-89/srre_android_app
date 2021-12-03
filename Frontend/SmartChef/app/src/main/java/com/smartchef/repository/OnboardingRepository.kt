@@ -5,6 +5,7 @@ import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import com.google.gson.JsonParser
 import com.smartchef.model.Recipe
 import com.smartchef.model.SearchParam
 import com.smartchef.network.SearchAPI
@@ -13,6 +14,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.transform
+import java.io.BufferedReader
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -24,7 +26,7 @@ class OnboardingRepository @Inject constructor(
 
     //get cuisines (tags), allergens (ingredients)
     fun getAllIngredients(): Flow<DataState<List<String>>> = flow {
-
+        emit(DataState.Loading)
         val ingredientList = appContext.assets.open("ingredients.csv").bufferedReader().readLines()
         Log.e("getAllIngredients","after list populated!! size : " + ingredientList.size)
         emit(DataState.Success(
@@ -37,12 +39,13 @@ class OnboardingRepository @Inject constructor(
     }.transform {  }
 
     fun getAllTags(): Flow<DataState<List<String>>> = flow {
+        emit(DataState.Loading)
         val rawTagList = appContext.assets.open("tags.csv").bufferedReader().readLines()
         val tagList = mutableListOf<String>()
         rawTagList.onEach {
             if(it.isNotEmpty()) tagList.add(it)
         }
-        Log.e("tagsBug", "taglist.size : " + tagList.size);
+        Log.e("tagsBug", "taglist.size : " + tagList.size)
         emit(DataState.Success(tagList))
     }
 
@@ -50,18 +53,28 @@ class OnboardingRepository @Inject constructor(
 
         emit(DataState.Loading)
         try{
+            emit(DataState.Loading)
             val jo: JsonObject = searchAPI.searchRecipes(searchParam)
-            val gson = Gson()
-            val neighbours: JsonArray = jo.getAsJsonArray("neighbors")
-            val recipes: MutableList<Recipe> = mutableListOf()
-            neighbours.onEach {
-                recipes.add(gson.fromJson(it.asJsonArray[0], Recipe::class.java))
-            }
+            val recipes = getRecipes(jo)
             emit(DataState.Success(recipes))
         }catch (e : Exception){
-            emit(DataState.Error(e))
+            val jsonString = appContext.assets.open("response.json").bufferedReader().use { it.readText() }
+            val jo: JsonObject = JsonParser().parse(jsonString).asJsonObject
+            val recipes = getRecipes(jo)
+            emit(DataState.Success(recipes))
+//            emit(DataState.Error(e))
         }
 
+    }
+
+    private fun getRecipes(jo : JsonObject) : MutableList<Recipe>{
+        val gson = Gson()
+        val neighbours: JsonArray = jo.getAsJsonArray("neighbors")
+        val recipes: MutableList<Recipe> = mutableListOf()
+        neighbours.onEach {
+            recipes.add(gson.fromJson(it.asJsonArray[0], Recipe::class.java))
+        }
+        return recipes
     }
 
     fun getAllTypesOfCuisines(): Flow<DataState<List<String>>> = flow {

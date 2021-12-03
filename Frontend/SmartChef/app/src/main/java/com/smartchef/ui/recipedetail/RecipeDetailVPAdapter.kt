@@ -2,7 +2,6 @@ package com.smartchef.ui.recipedetail
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.smartchef.ui.onboarding.OnBoardingPage
 
 
 class RecipeDetailVPAdapter(

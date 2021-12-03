@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.smartchef.R
 import com.smartchef.databinding.RecipeListFragmentBinding
@@ -59,17 +62,26 @@ class RecipeListFragment : Fragment(){
         appViewModel.recipeList.observe(viewLifecycleOwner, { dataState ->
             when(dataState){
                 is DataState.Error -> {
-
+                    binding.progress.hide()
+                    Snackbar.make(view, R.string.search_error, Snackbar.LENGTH_SHORT).show()
                 }
                 is DataState.Loading -> {
-
+                    binding.progress.show()
                 }
                 is DataState.Success -> {
+                    binding.progress.hide()
                     adapter.data = dataState.data
                 }
             }
         })
 
-        appViewModel.searchParam.value?.let { appViewModel.searchRecipes(it) }
+        appViewModel.searchParam.observe(viewLifecycleOwner){
+            if(it != null){
+                appViewModel.searchRecipes(it)
+            } else{
+                Log.e("RLFLog", "Search Param is null!!")
+            }
+        }
     }
 }
+

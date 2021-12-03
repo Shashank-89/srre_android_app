@@ -13,6 +13,7 @@ import com.smartchef.R
 import com.smartchef.databinding.OnboardingFragmentBinding
 import com.smartchef.databinding.RecipeDetailFragmentBinding
 import com.smartchef.model.Recipe
+import com.smartchef.model.SearchParam
 import com.smartchef.ui.onboarding.AppViewModel
 import com.smartchef.util.DataState
 
@@ -47,6 +48,16 @@ class RecipeDetailFragment : Fragment(){
             }
         })
 
+        val param: SearchParam? = appViewModel.searchParam.value
+        if(param != null){
+            param.ingredientExclusions.forEach {
+                binding.tagexholder.addTag(it)
+            }
+            param.tagExclusions.forEach {
+                binding.tagexholder.addTag(it)
+            }
+        }
+
         super.onViewCreated(view, savedInstanceState)
     }
 
@@ -75,6 +86,6 @@ class RecipeDetailFragment : Fragment(){
         }
 
         binding.ingredientDesc.text = ingDesc
-        binding.instructionDesc.text = recipe.rawSteps
+        binding.instructionDesc.text = recipe.rawSteps.replace("\n", "\n\n")
     }
 }

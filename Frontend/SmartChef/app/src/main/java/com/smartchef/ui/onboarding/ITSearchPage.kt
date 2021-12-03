@@ -1,32 +1,32 @@
 package com.smartchef.ui.onboarding
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import co.lujun.androidtagview.TagView
 import com.smartchef.databinding.OnBoardingPageBinding
+import com.smartchef.model.SearchParam
 import com.smartchef.ui.SelectionsInterface
 import com.smartchef.ui.TISearchAdapter
-import com.smartchef.ui.auth.AuthViewModel
 import com.smartchef.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OnBoardingPage : Fragment(), SelectionsInterface{
+class ITSearchPage : Fragment(), SelectionsInterface{
 
     companion object {
         private const val ARG_POSITION = "pos"
         private const val ONBOARDING   = "ob"
 
-        fun getInstance(position: Int, onboarding: Boolean) = OnBoardingPage().apply {
+        fun getInstance(position: Int, onboarding: Boolean) = ITSearchPage().apply {
             arguments = bundleOf(ARG_POSITION to position,
                 ONBOARDING to onboarding)
         }
@@ -41,6 +41,7 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
 
+        Log.e("OBFragLog", "onCreateView on page called!!")
         binding = OnBoardingPageBinding.inflate(inflater, container, false)
         val args: Bundle = requireArguments()
         position = args.getInt(ARG_POSITION)
@@ -124,6 +125,7 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.e("OBFragLog", "onViewCreated on page called!!")
         appViewModel = ViewModelProvider(requireActivity())[AppViewModel::class.java]
 
         when(position){
@@ -131,8 +133,11 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
                 appViewModel.dataStateIngredients.observe(viewLifecycleOwner, { dataState ->
                     when(dataState){
                         is DataState.Error -> TODO()
-                        is DataState.Loading -> TODO()
+                        is DataState.Loading ->{
+                            binding.progress.show()
+                        }
                         is DataState.Success -> {
+                            binding.progress.hide()
                             adapter.data = dataState.data
                         }
                     }
@@ -152,15 +157,7 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
             1 -> {
 
                 if(onboarding){
-//                    appViewModel.dataStateCuisines.observe(viewLifecycleOwner, { dataState ->
-//                        when(dataState){
-//                            is DataState.Error -> TODO()
-//                            is DataState.Loading -> TODO()
-//                            is DataState.Success -> {
-//                                adapter.data = dataState.data
-//                            }
-//                        }
-//                    })
+
 
                     appViewModel.dataStateTags.observe(viewLifecycleOwner, { dataState ->
                         when(dataState){
@@ -205,6 +202,47 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
 
             }
         }
+
+        val param: SearchParam? = appViewModel.searchParam.value
+        if(param != null){
+            when(position){
+                0 -> {
+                    val ingredExclusionsMap = hashMapOf<String, Boolean>()
+                    val ingredientsMap = hashMapOf<String, Boolean>()
+
+                    param.ingredients.forEach {
+                        ingredientsMap[it] = true
+                        binding.included.addTag(it)
+                    }
+
+                    param.ingredientExclusions.forEach{
+                        ingredExclusionsMap[it] = true
+                        binding.excluded.addTag(it)
+                    }
+
+                    adapter.selections = ingredientsMap
+                    adapter.exclusions = ingredExclusionsMap
+                }
+
+                1 -> {
+                    val tagExclusionsMap = hashMapOf<String, Boolean>()
+                    val tagMap = hashMapOf<String, Boolean>()
+
+                    param.tags.forEach {
+                        tagMap[it] = true
+                        binding.included.addTag(it)
+                    }
+
+                    param.tagExclusions.forEach{
+                        tagExclusionsMap[it] = true
+                        binding.excluded.addTag(it)
+                    }
+
+                    adapter.selections = tagMap
+                    adapter.exclusions = tagExclusionsMap
+                }
+            }
+        }
     }
 
     override fun onStart() {
@@ -219,6 +257,13 @@ class OnBoardingPage : Fragment(), SelectionsInterface{
 //                appViewModel.setStateEvent(AppViewModel.QueryEvent.GetSelectedTags)
             }
         }
+        Log.e("OBFragLog", "onStart on page called!!")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adapter?.filter.filter("")
+        Log.e("OBFragLog", "onResume on page called!!")
     }
 
     override fun getSelections(): HashMap<String, Boolean> {

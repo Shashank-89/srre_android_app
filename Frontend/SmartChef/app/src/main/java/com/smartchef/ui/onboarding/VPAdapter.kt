@@ -3,7 +3,7 @@ package com.smartchef.ui.onboarding
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class OnboardingAdapter(
+class VPAdapter(
     fragment:Fragment,
     private val itemCount: Int,
     private val onboarding: Boolean) : FragmentStateAdapter(fragment) {
@@ -13,7 +13,9 @@ class OnboardingAdapter(
     }
 
     override fun createFragment(position: Int): Fragment {
-        return OnBoardingPage.getInstance(position, onboarding)
+        return ITSearchPage.getInstance(position, onboarding)
     }
+
+
 
 }
