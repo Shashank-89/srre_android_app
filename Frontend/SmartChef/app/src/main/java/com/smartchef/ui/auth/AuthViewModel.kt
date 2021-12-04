@@ -36,7 +36,9 @@ class AuthViewModel : ViewModel() {
     var profile: Profile? = null
 
     val authenticationState = FirebaseUserLiveData().map { user ->
+
         if (user != null) {
+
             AuthenticationState.AUTHENTICATED
             user.getIdToken(false).addOnCompleteListener{
                 if(it.isSuccessful){

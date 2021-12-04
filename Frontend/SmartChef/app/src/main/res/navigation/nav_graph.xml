@@ -6,20 +6,34 @@
 
 
     <fragment
-        android:id="@+id/onboardingFragment"
+        android:id="@+id/onboarding_fragment"
         android:name="com.smartchef.ui.onboarding.OnboardingFragment"
-        android:label="OnboardingMainFragment" >
+        android:label="OnboardingMainFragment">
 
         <action
             android:id="@+id/action_onboarding_to_search"
-            app:destination="@id/recipe_list"
-            app:popUpTo="@+id/recipe_list"/>
+            app:destination="@id/search_fragment"
+            app:popUpTo="@+id/search_fragment"/>
 
     </fragment>
 
     <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.smartchef.ui.SearchFragment"
+        android:label="SearchFragment">
+
+        <action
+            android:id="@+id/action_landing_to_search"
+            app:destination="@id/recipe_list"
+            app:popUpTo="@+id/recipe_list"/>
+        <action
+            android:id="@+id/action_search_fragment_to_onboarding_fragment"
+            app:destination="@id/onboarding_fragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/recipe_list"
-        android:name="com.smartchef.ui.RecipeListFragment"
+        android:name="com.smartchef.ui.recipedetail.RecipeListFragment"
         android:label="search_main">
 
         <action

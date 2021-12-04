@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
@@ -13,7 +12,7 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.smartchef.BuildConfig
 import com.smartchef.R
 import com.smartchef.databinding.ActivityAuthBinding
-import com.smartchef.ui.onboarding.AppViewModel
+import com.smartchef.ui.common.AppViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -79,9 +78,9 @@ open class AuthActivity : AppCompatActivity() {
             val nav = findNavController(R.id.nav_host_fragment)
             val navGraph = nav.navInflater.inflate(R.navigation.nav_graph)
             if(result.idpResponse?.isNewUser == true){
-                navGraph.startDestination = R.id.onboardingFragment
+                navGraph.startDestination = R.id.onboarding_fragment
             }else{
-                navGraph.startDestination = R.id.onboardingFragment
+                navGraph.startDestination = R.id.search_fragment
             }
             nav.graph = navGraph
         }

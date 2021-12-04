@@ -1,5 +1,6 @@
 package com.smartchef.di
 
+import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.smartchef.network.SearchAPI
@@ -22,6 +23,14 @@ object RetrofitModule {
     @Provides
     fun provideGsonBuilder(): Gson {
         return GsonBuilder().create()
+    }
+
+    @Singleton
+    @Provides
+    fun provideFirebaseDB(): FirebaseDatabase{
+        val database = FirebaseDatabase.getInstance()
+        database.setPersistenceEnabled(true)
+        return database
     }
 
     @Singleton

@@ -1,4 +1,4 @@
-package com.smartchef.ui.onboarding
+package com.smartchef.ui.common
 
 import android.os.Bundle
 import android.util.Log
@@ -27,7 +27,8 @@ class ITSearchPage : Fragment(), SelectionsInterface{
         private const val ONBOARDING   = "ob"
 
         fun getInstance(position: Int, onboarding: Boolean) = ITSearchPage().apply {
-            arguments = bundleOf(ARG_POSITION to position,
+            arguments = bundleOf(
+                ARG_POSITION to position,
                 ONBOARDING to onboarding)
         }
     }
@@ -127,7 +128,6 @@ class ITSearchPage : Fragment(), SelectionsInterface{
         super.onViewCreated(view, savedInstanceState)
         Log.e("OBFragLog", "onViewCreated on page called!!")
         appViewModel = ViewModelProvider(requireActivity())[AppViewModel::class.java]
-
         when(position){
             0 -> {
                 appViewModel.dataStateIngredients.observe(viewLifecycleOwner, { dataState ->
@@ -156,49 +156,15 @@ class ITSearchPage : Fragment(), SelectionsInterface{
 
             1 -> {
 
-                if(onboarding){
-
-
-                    appViewModel.dataStateTags.observe(viewLifecycleOwner, { dataState ->
-                        when(dataState){
-                            is DataState.Error -> TODO()
-                            is DataState.Loading -> TODO()
-                            is DataState.Success -> {
-                                adapter.data = dataState.data
-                            }
+                appViewModel.dataStateTags.observe(viewLifecycleOwner, { dataState ->
+                    when(dataState){
+                        is DataState.Error -> TODO()
+                        is DataState.Loading -> TODO()
+                        is DataState.Success -> {
+                            adapter.data = dataState.data
                         }
-                    })
-
-                    appViewModel.selectedCuisines.observe(viewLifecycleOwner, { dataState ->
-                        when(dataState){
-                            is DataState.Error -> TODO()
-                            is DataState.Loading -> TODO()
-                            is DataState.Success -> {
-                                adapter.selections = dataState.data
-                            }
-                        }
-                    })
-                }else{
-                    appViewModel.dataStateTags.observe(viewLifecycleOwner, { dataState ->
-                        when(dataState){
-                            is DataState.Error -> TODO()
-                            is DataState.Loading -> TODO()
-                            is DataState.Success -> {
-                                adapter.data = dataState.data
-                            }
-                        }
-                    })
-
-                    appViewModel.selectedTags.observe(viewLifecycleOwner, { dataState ->
-                        when(dataState){
-                            is DataState.Error -> TODO()
-                            is DataState.Loading -> TODO()
-                            is DataState.Success -> {
-                                adapter.selections = dataState.data
-                            }
-                        }
-                    })
-                }
+                    }
+                })
 
             }
         }
@@ -250,11 +216,9 @@ class ITSearchPage : Fragment(), SelectionsInterface{
         when(position){
             0 -> {
                 appViewModel.setStateEvent(AppViewModel.QueryEvent.GetIngredients)
-                appViewModel.setStateEvent(AppViewModel.QueryEvent.GetIngredientSelections)
             }
             1 -> {
                 appViewModel.setStateEvent(AppViewModel.QueryEvent.GetTags)
-//                appViewModel.setStateEvent(AppViewModel.QueryEvent.GetSelectedTags)
             }
         }
         Log.e("OBFragLog", "onStart on page called!!")

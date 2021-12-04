@@ -2,10 +2,13 @@ package com.smartchef.repository
 
 import android.content.Context
 import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import com.smartchef.model.Profile
 import com.smartchef.model.Recipe
 import com.smartchef.model.SearchParam
 import com.smartchef.network.SearchAPI
@@ -14,12 +17,11 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.transform
-import java.io.BufferedReader
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class OnboardingRepository @Inject constructor(
+class AppRepository @Inject constructor(
     @ApplicationContext private val appContext: Context,
     private val searchAPI: SearchAPI
     ){
@@ -27,8 +29,12 @@ class OnboardingRepository @Inject constructor(
     //get cuisines (tags), allergens (ingredients)
     fun getAllIngredients(): Flow<DataState<List<String>>> = flow {
         emit(DataState.Loading)
-        val ingredientList = appContext.assets.open("ingredients.csv").bufferedReader().readLines()
-        Log.e("getAllIngredients","after list populated!! size : " + ingredientList.size)
+        val rawIngredientList = appContext.assets.open("ingredients.csv").bufferedReader().readLines()
+        val ingredientList = mutableListOf<String>()
+        rawIngredientList.onEach {
+            if(it.isNotEmpty()) ingredientList.add(it)
+        }
+        Log.e("getAllIngredients","after list populated!! size : " + rawIngredientList.size)
         emit(DataState.Success(
             ingredientList
         ))
@@ -66,6 +72,33 @@ class OnboardingRepository @Inject constructor(
         }
 
     }
+
+
+//    fun uploadTest(){
+//        val search = SearchParam()
+//        search.tagExclusions = listOf("excluded", "tag")
+//        search.tags = listOf("included", "tags")
+//        search.ingredients = listOf("included", "ingredients")
+//        search.ingredientExclusions = listOf("excluded", "ingredients")
+//
+//        val profile = listOf<Profile>(Profile(name = "default", param = search))
+//        val uid = FirebaseAuth.getInstance().getCurrentUser()?.uid
+//        database.getReference("profile/$uid").child("profile_list").setValue(profile)
+//    }
+//
+//
+//    fun queryTest() {
+//        val uid = FirebaseAuth.getInstance().getCurrentUser()?.uid
+//
+//        database.getReference("profile/$uid").child("profile_list").get().addOnSuccessListener {
+//            val profile: MutableList<Profile> = it.value as MutableList<Profile>
+//            Log.i("firebase", "Got value ${it.value} size ${profile.size}")
+//        }.addOnFailureListener{
+//            Log.e("firebase", "Error getting data", it)
+//        }
+//
+//    }
+
 
     private fun getRecipes(jo : JsonObject) : MutableList<Recipe>{
         val gson = Gson()
@@ -111,6 +144,7 @@ class OnboardingRepository @Inject constructor(
             "Portuguese"
         )))
     }
+
     //Ref:-https://www.listchallenges.com/world-cuisines
 }
 

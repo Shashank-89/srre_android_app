@@ -1,4 +1,4 @@
-package com.smartchef.ui.onboarding
+package com.smartchef.ui.common
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

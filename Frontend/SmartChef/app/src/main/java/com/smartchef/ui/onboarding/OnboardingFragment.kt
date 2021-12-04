@@ -11,11 +11,16 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.smartchef.R
 import com.smartchef.databinding.OnboardingFragmentBinding
+import com.smartchef.model.Profile
+import com.smartchef.ui.common.AppViewModel
+import com.smartchef.ui.common.ITSearchPage
+import com.smartchef.ui.common.VPAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class OnboardingFragment : Fragment(){
 
+    private lateinit var profileList: MutableList<Profile>
     private lateinit var binding: OnboardingFragmentBinding
 
     private var onPageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
@@ -56,13 +61,17 @@ class OnboardingFragment : Fragment(){
             if(binding.vp2.currentItem == 0){
                 //ingredients
                 val page = childFragmentManager.findFragmentByTag("f" + binding.vp2.currentItem) as ITSearchPage
-                appViewModel.setIngredientsParam(page.getSelections(), page.getExclusions())
+                appViewModel.setIngredientsParam(page.getSelections(), page.getExclusions(), true,)
                 binding.vp2.setCurrentItem(1, true)
             }else{
                 //tags
                 val page = childFragmentManager.findFragmentByTag("f" + binding.vp2.currentItem) as ITSearchPage
                 appViewModel.setTagsParam(page.getSelections(), page.getExclusions())
                 binding.vp2.setCurrentItem(0, false)
+
+
+                appViewModel.searchParam.value
+
                 findNavController().navigate(R.id.action_onboarding_to_search)
             }
         })

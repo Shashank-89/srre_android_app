@@ -1,4 +1,4 @@
-package com.smartchef.ui
+package com.smartchef.ui.recipedetail
 
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +22,7 @@ class RecipeListAdapter : RecyclerView.Adapter<RecipeListAdapter.ViewHolder>(){
     var clickListener : OnItemClick? = null
     lateinit var layoutInflater: LayoutInflater
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeListAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.recipe_list_item, parent, false)
         return ViewHolder(view)

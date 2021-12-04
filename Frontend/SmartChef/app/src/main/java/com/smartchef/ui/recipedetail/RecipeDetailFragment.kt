@@ -1,7 +1,6 @@
 package com.smartchef.ui.recipedetail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.smartchef.R
-import com.smartchef.databinding.OnboardingFragmentBinding
 import com.smartchef.databinding.RecipeDetailFragmentBinding
 import com.smartchef.model.Recipe
 import com.smartchef.model.SearchParam
-import com.smartchef.ui.onboarding.AppViewModel
+import com.smartchef.ui.common.AppViewModel
 import com.smartchef.util.DataState
 
 class RecipeDetailFragment : Fragment(){

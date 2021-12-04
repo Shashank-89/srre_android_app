@@ -1,23 +1,24 @@
-package com.smartchef.ui.onboarding
+package com.smartchef.ui.common
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.database.FirebaseDatabase
+import com.smartchef.model.Profile
 import com.smartchef.model.Recipe
 import com.smartchef.model.SearchParam
-import com.smartchef.repository.OnboardingRepository
+import com.smartchef.repository.AppRepository
 import com.smartchef.util.DataState
-import com.smartchef.ui.onboarding.AppViewModel.QueryEvent.*
+import com.smartchef.ui.common.AppViewModel.QueryEvent.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import javax.inject.Singleton
 
 @HiltViewModel
-class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository): ViewModel() {
+class AppViewModel @Inject constructor(private val obRepo : AppRepository, val database: FirebaseDatabase): ViewModel() {
 
     private val _dataStateIngredients: MutableLiveData<DataState<List<String>>> = MutableLiveData()
 
@@ -58,6 +59,10 @@ class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository
     val searchParam : LiveData<SearchParam>
         get() = _searchParam
 
+    private val _profile: MutableLiveData<Profile> = MutableLiveData()
+    val profile : LiveData<Profile>
+        get() = _profile
+
     fun setStateEvent(queryEvent: QueryEvent){
         viewModelScope.launch {
             when(queryEvent){
@@ -69,18 +74,10 @@ class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository
                         .launchIn(viewModelScope)
                 }
 
-                is GetIngredientSelections ->{
-                    obRepo.getSelectedIngredients().onEach {  }
-                }
-
                 is GetTags -> {
                     obRepo.getAllTags().onEach { dataStateTags ->
                         _dataStateTags.value = dataStateTags
                     }.launchIn(viewModelScope)
-                }
-
-                is GetSelectedTags -> {
-
                 }
 
                 is GetCuisines -> {
@@ -90,6 +87,7 @@ class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository
                         }
                         .launchIn(viewModelScope)
                 }
+
             }
         }
     }
@@ -104,9 +102,12 @@ class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository
         }
     }
 
+
     fun setIngredientsParam(
         selections: java.util.HashMap<String, Boolean>,
-        exclusions: java.util.HashMap<String, Boolean>
+        exclusions: java.util.HashMap<String, Boolean>,
+        forSearch: Boolean,
+        name: String
     ) {
         val ingredientExclusions: MutableList<String> = mutableListOf()
         val ingredientSelections: MutableList<String> = mutableListOf()
@@ -116,14 +117,28 @@ class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository
         exclusions.onEach {
             if(it.value) ingredientExclusions.add(it.key.lowercase())
         }
-        var param : SearchParam? = _searchParam.value
-        if(param != null){
-            param.ingredientExclusions = ingredientExclusions
-            param.ingredients = ingredientSelections
+
+        if(forSearch){
+            var param : SearchParam? = _searchParam.value
+            if(param != null){
+                param.ingredientExclusions = ingredientExclusions
+                param.ingredients = ingredientSelections
+            }else{
+                param = SearchParam(ingredients = ingredientSelections, ingredientExclusions = ingredientExclusions)
+            }
+            _searchParam.value = param!!
         }else{
-            param = SearchParam(ingredients = ingredientSelections, ingredientExclusions = ingredientExclusions)
+            var profile : Profile? = _profile.value
+            if(profile != null){
+                profile.param.ingredientExclusions = ingredientExclusions
+                profile.param.ingredients = ingredientSelections
+            }else{
+                val param = SearchParam()
+                param.ingredientExclusions = ingredientExclusions
+                param.ingredients = ingredientSelections
+                val profile = Profile(name, param)
+            }
         }
-        _searchParam.value = param!!
     }
 
 
@@ -150,14 +165,9 @@ class AppViewModel @Inject constructor(private val obRepo : OnboardingRepository
     }
 
 
-
-
     sealed class QueryEvent{
         object GetIngredients: QueryEvent()
-        object GetIngredientSelections: QueryEvent()
         object GetCuisines: QueryEvent()
-        object GetCuisinesSelections: QueryEvent()
         object GetTags: QueryEvent()
-        object GetSelectedTags: QueryEvent()
     }
 }

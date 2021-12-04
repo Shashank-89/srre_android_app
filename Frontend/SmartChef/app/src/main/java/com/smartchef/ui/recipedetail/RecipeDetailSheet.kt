@@ -4,15 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
-import com.smartchef.R
-import com.smartchef.databinding.OnboardingFragmentBinding
 import com.smartchef.databinding.RecipeDetailSheetBinding
 import com.smartchef.model.Recipe
-import com.smartchef.ui.onboarding.AppViewModel
+import com.smartchef.ui.common.AppViewModel
 import com.smartchef.util.DataState
 
 class RecipeDetailSheet : BottomSheetDialogFragment(){
