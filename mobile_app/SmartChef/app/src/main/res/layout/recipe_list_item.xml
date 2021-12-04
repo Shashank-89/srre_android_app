@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    android:id="@+id/card"
+    app:cardBackgroundColor="@color/cream_50"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="3.5:2"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/orange_800"
+            tools:text="Creamy Pasta"/>
+
+        <TextView
+            android:id="@+id/cal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/cal_q"
+            android:textAlignment="center"
+            android:fontFamily="@font/lekton"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/green_800"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintLeft_toLeftOf="@id/name"
+            app:layout_constraintRight_toLeftOf="@id/protein"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/protein_q"
+            android:textAlignment="center"
+            android:fontFamily="@font/lekton"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/green_800"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintLeft_toRightOf="@id/cal"
+            app:layout_constraintRight_toLeftOf="@id/fat"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/fat_q"
+            android:textAlignment="center"
+            android:fontFamily="@font/lekton"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/green_800"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintLeft_toRightOf="@id/protein"
+            app:layout_constraintRight_toLeftOf="@id/sugar"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/sugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/sugar_q"
+            android:textAlignment="center"
+            android:fontFamily="@font/lekton"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/green_800"
+            app:layout_constraintRight_toRightOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintLeft_toRightOf="@id/fat"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="18sp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textAlignment="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/lekton"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="@color/green_100"
+            android:textColor="@color/green_800"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
