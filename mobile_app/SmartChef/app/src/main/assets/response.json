@@ -1,0 +1,592 @@
+{
+  "neighbors": [
+    [
+      {
+        "_additional": {
+          "certainty": 0.87340736
+        },
+        "cal": 391.2,
+        "carbs": 1,
+        "description": "a beginner's recipe.",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/42/20/0/picONkRCB.jpg",
+        "ingredients": [
+          "2 1⁄2 - 5 lbs chicken",
+          "4 tablespoons butter",
+          "1⁄2 teaspoon salt",
+          "1⁄4 teaspoon pepper",
+          "1 large onion, halved",
+          "1⁄2 teaspoon sage",
+          "1⁄2 cup water"
+        ],
+        "minutes": 190,
+        "model_ingredients": [
+          "chicken",
+          "butter",
+          "salt",
+          "pepper",
+          "onion",
+          "sage",
+          "water"
+        ],
+        "name": "e z roast chicken",
+        "protein": 52,
+        "rid": "42200",
+        "satFat": 59,
+        "servings": "5",
+        "sodium": 16,
+        "steps": "Preheat oven to 325°F.\nRemove giblets/neck from chicken cavities.\nRinse chicken and pat dry.\nRub softened butter all over chicken.\nSprinkle outside of chicken with salt and pepper.\nSprinkle 1/4 tsp salt and 1/2 tsp of sage inside the chicken.\nPlace onion inside chicken.\nPlace chicken in roasting pan breast side up.\nAdd 1/2 cup water to pan.\nLoosely tent breast with aluminum foil.\nCook for 25 minutes per pound.\n(3 lbs= approx 1 1/2 hours; 5 lbs= approx 2 1/2 hours).\nRemove chicken to a warm platter and let rest for 15 min to distribute the juices.",
+        "sugar": 5,
+        "tags": [
+          "oven",
+          "main-dish",
+          "chicken",
+          "kid-friendly",
+          "cheap",
+          "4-hours-or-less",
+          "meat",
+          "poultry",
+          "comfort-food",
+          "easy"
+        ],
+        "totalFat": 46
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.8645959
+        },
+        "cal": 520.5,
+        "carbs": 22,
+        "description": "this spicy ramen is made with a egg and an assortment of toppings. i made this recipe up. when you prepare the ramen do not over-cook or else the noodles get really mushy and kinda gross tasting. but other than that enjoy this recipe.",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/gk-static/fdc-new/img/fdc-shareGraphic.png",
+        "ingredients": [
+          "1 -2 egg",
+          "1 (3 ounce) package ramen noodles (any flavor but I prefer any spicy flavor)",
+          "1 bunch spinach",
+          "3 ounces leftover meat (beef, chicken,turkey, etc.)"
+        ],
+        "minutes": 21,
+        "model_ingredients": [
+          "egg",
+          "ramen_noodles",
+          "spinach",
+          "meat"
+        ],
+        "name": "allysha s really awesome ramen",
+        "protein": 49,
+        "rid": "413524",
+        "satFat": 41,
+        "servings": "",
+        "sodium": 86,
+        "steps": "Bring approximately 1/2 or 1 cup of water to a boil.Place the seasoning packet into the water and add leftover meat and the noodles.\nWhen noodles are barely soft add the egg yolk to the broth and noodles.Add the spinach stem side down lightly cook, then add the spinach until cooked through.\nTurn off the stove. Pour the a little of the broth into your bowl, then add the noodles and top with egg and leftover meat.\nENJOY AND SLURP YOUR NOODLES LOUDLY.",
+        "sugar": 11,
+        "tags": [
+          "main-dish",
+          "asian",
+          "soups",
+          "stews",
+          "30-minutes-or-less",
+          "for-1-or-2",
+          "pasta",
+          "kid-friendly",
+          "cheap",
+          "5-ingredients-or-less",
+          "easy"
+        ],
+        "totalFat": 29
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.85751545
+        },
+        "cal": 431.9,
+        "carbs": 2,
+        "description": "this is one of the best whole chickens i have ever cooked. the cheese stuffing is tucked under the breast skin of the chicken to give added flavor and moistness to the meat. impressive looking and awesome tasting….what more could you ask for…..",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/12/03/42/picAHUuB6.jpg",
+        "ingredients": [
+          "1 chicken, 5 Pounds",
+          "1 1⁄3 cups zucchini",
+          "2 tablespoons butter",
+          "1 lime, Juice of",
+          "Stuffing",
+          "1⁄2 cup zucchini",
+          "3⁄4 cup soft cheese",
+          "1 lime, Rind of, Grated",
+          "2 tablespoons fresh breadcrumbs",
+          "1⁄2 teaspoon salt",
+          "1⁄2 teaspoon pepper"
+        ],
+        "minutes": 110,
+        "model_ingredients": [
+          "chicken",
+          "zucchini",
+          "butter",
+          "lime",
+          "cheese",
+          "fresh_breadcrumbs",
+          "salt",
+          "pepper"
+        ],
+        "name": "chicken with creamy zucchini and lime stuffing",
+        "protein": 64,
+        "rid": "120342",
+        "satFat": 56,
+        "servings": "6-8",
+        "sodium": 20,
+        "steps": "Stuffing: Trim and coarsely grate the Zucchini and mix with the Cheese, Lime Rind, Bread Crumbs, Salt and Pepper.\r\nCarefully ease the skin away from the breast of the Chicken and push the stuffing under the skin with your fingers to cover the breast evenly.\r\nPlace Chicken in a baking pan, brush with oil and roast in a preheated oven at 375 degrees for 1 ½ to 2 hours or until the juices run clear.\r\nMeanwhile, trim the remaining zucchini and cut into long, thin strips with a vegetable peeler or sharp knife (they will look like thin ribbons with the dark green peel left on); sauté in the butter and lime juice until just tender and serve with the Chicken.",
+        "sugar": 4,
+        "tags": [
+          "toddler-friendly",
+          "main-dish",
+          "chicken",
+          "kid-friendly",
+          "chicken",
+          "whole-chicken",
+          "dinner-party",
+          "brunch",
+          "4-hours-or-less",
+          "meat",
+          "poultry",
+          "easy"
+        ],
+        "totalFat": 47
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.85537684
+        },
+        "cal": 136.6,
+        "carbs": 6,
+        "description": "homemade chicken noodle soup. young children can manage the stars better than regular noodles.",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/gk-static/fdc-new/img/fdc-shareGraphic.png",
+        "ingredients": [
+          "1⁄2 lb chicken, with bone and skin",
+          "3 carrots, chopped",
+          "1 cup onion, chopped",
+          "1 cup celery, chopped",
+          "2 garlic cloves, bruised",
+          "8 ounces star shaped pasta",
+          "1⁄4 cup parsley, chopped",
+          "salt and pepper"
+        ],
+        "minutes": 75,
+        "model_ingredients": [
+          "chicken",
+          "carrot",
+          "onion",
+          "celery",
+          "garlic_cloves",
+          "pasta",
+          "parsley",
+          "salt_and_pepper"
+        ],
+        "name": "chicken and stars soup",
+        "protein": 13,
+        "rid": "18418",
+        "satFat": 4,
+        "servings": "11",
+        "sodium": 1,
+        "steps": "In a stock pot, place chicken, carrots, garlic, onion and celery; cover with water.\nBoil for thirty to forty minutes, remove chicken from pot.\nAllow chicken to cool (very important unless you like burnt fingers) remove skin and bones, then chop chicken into bite-size pieces.\nAdd chicken back to soup, add parsley, pasta, salt and pepper.\nAllow to simmer until noodles are cooked.\nYou may need to add water to keep soup soupy after pasta has cooked.\nUse your own judgment.",
+        "sugar": 8,
+        "tags": [
+          "vegetables",
+          "stove-top",
+          "main-dish",
+          "one-dish-meal",
+          "chicken",
+          "pasta",
+          "low-sodium",
+          "healthy",
+          "kid-friendly",
+          "lunch",
+          "low-cholesterol",
+          "soups",
+          "stews",
+          "cheap",
+          "4-hours-or-less",
+          "meat",
+          "infant-baby-friendly",
+          "poultry",
+          "healthy",
+          "comfort-food",
+          "easy"
+        ],
+        "totalFat": 5
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.8527875
+        },
+        "cal": 475.6,
+        "carbs": 8,
+        "description": "",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/gk-static/fdc-new/img/fdc-shareGraphic.png",
+        "ingredients": [
+          "1 chicken, cut up",
+          "2 carrots, cut in 1 inch pieces",
+          "3 potatoes, 2 inch pieces",
+          "1 cup chopped onion",
+          "1 cup sliced celery",
+          "1 tablespoon minced garlic",
+          "1 tablespoon chicken bouillon",
+          "1 teaspoon tarragon",
+          "1⁄2 teaspoon basil",
+          "1⁄2 teaspoon pepper",
+          "6 cups chicken broth"
+        ],
+        "minutes": 312,
+        "model_ingredients": [
+          "chicken",
+          "carrot",
+          "potato",
+          "onion",
+          "celery",
+          "garlic",
+          "chicken_bouillon",
+          "tarragon",
+          "basil",
+          "pepper",
+          "chicken_broth"
+        ],
+        "name": "crock pot chunky chicken soup",
+        "protein": 72,
+        "rid": "31873",
+        "satFat": 35,
+        "servings": "6",
+        "sodium": 38,
+        "steps": "Place chicken in crock pot.\nAdd all other ingredients.\nCover and cook on low for 5 hours.\nRemove chicken from crock pot, allow to cool slightly, and remove bones.\nReturn to crock pot.\nCover and cook 1/2 hour more.",
+        "sugar": 15,
+        "tags": [
+          "main-dish",
+          "chicken",
+          "north-american",
+          "kid-friendly",
+          "american",
+          "soups",
+          "stews",
+          "cheap",
+          "californian",
+          "crock-pot",
+          "slow-cooker",
+          "meat",
+          "northeastern-united-states",
+          "poultry",
+          "southern-united-states",
+          "comfort-food",
+          "easy"
+        ],
+        "totalFat": 38
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.8459754
+        },
+        "cal": 500.6,
+        "carbs": 15,
+        "description": "this is a warming, throw together meal.",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/40/11/42/picvPAY3q.jpg",
+        "ingredients": [
+          "3 (85 g) packets instant noodles, chicken flavoured with flavour sachets",
+          "1 carrot, large. halved longways and sliced diagonally finnely",
+          "6 cups water",
+          "100 g baby spinach leaves",
+          "1 bbq chicken, skin removed, meat shredded"
+        ],
+        "minutes": 23,
+        "model_ingredients": [
+          "noodles",
+          "carrot",
+          "water",
+          "baby_spinach_leaves",
+          "chicken"
+        ],
+        "name": "chicken noodle soup using 5 ingredients",
+        "protein": 61,
+        "rid": "401142",
+        "satFat": 28,
+        "servings": "4",
+        "sodium": 5,
+        "steps": "Break noodles into lengths.\r\nPlace in large saucepan with flavour sachets, carrot and water.\r\nBring to the boil, cook 4 - 5 minutes.\r\nAdd spinach and chicken.\r\nCook till heated through.\r\nServe.",
+        "sugar": 8,
+        "tags": [
+          "chicken",
+          "pasta",
+          "low-sodium",
+          "kid-friendly",
+          "soups",
+          "stews",
+          "cheap",
+          "low-carb",
+          "low-calorie",
+          "low-saturated-fat",
+          "5-ingredients-or-less",
+          "meat",
+          "30-minutes-or-less",
+          "poultry",
+          "easy"
+        ],
+        "totalFat": 30
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.84188145
+        },
+        "cal": 71.7,
+        "carbs": 3,
+        "description": "what is bamba? bamba to an israeli kid is like cheetos to an american one. it is a snack made of peanuts, that melts in the mouth. even though it is technically junk food, it is highly recommended by pediatricians all over the country because it is coated with vitamins (???!!!), at least that's what pediatricians tell mothers. it is safe, because it melts in the mouth. for many ki",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/gk-static/fdc-new/img/fdc-shareGraphic.png",
+        "ingredients": [
+          "4 pieces chicken (with skin)",
+          "1 egg",
+          "1 (2 1/2 ounce) bag bamba",
+          "1⁄2 cup breadcrumbs"
+        ],
+        "minutes": 40,
+        "model_ingredients": [
+          "chicken",
+          "egg",
+          "bamba",
+          "breadcrumbs"
+        ],
+        "name": "chicken with bamba",
+        "protein": 6,
+        "rid": "13456",
+        "satFat": 2,
+        "servings": "4",
+        "sodium": 4,
+        "steps": "With roller pin mash Bamba to crumbs.\nMix in equal quantities with bread crumbs, and proceed as in making schnitzels or fried chicken.",
+        "sugar": 3,
+        "tags": [
+          "asian",
+          "picnic",
+          "stove-top",
+          "main-dish",
+          "chicken",
+          "kid-friendly",
+          "lunch",
+          "60-minutes-or-less",
+          "jewish",
+          "potluck",
+          "european",
+          "middle-eastern",
+          "5-ingredients-or-less",
+          "meat",
+          "to-go",
+          "3-steps-or-less",
+          "jewish",
+          "kosher",
+          "poultry",
+          "easy"
+        ],
+        "totalFat": 3
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.84171367
+        },
+        "cal": 868.6,
+        "carbs": 16,
+        "description": "whole chickens are so easy to make and really look impressive on the dinner table. this recipe creates a well-seasoned and juicy chicken with a wonderfully flavorful stuffing. i have made this recipe a number of times over the years and have always had outstanding results and raves. i found the recipe in 365 ways to cook chicken. sometimes i add cooking wine to the water that the rice cooks in…. otherwise i really don’t need to change a thing.\r\n\r\n--note--\r\nthis chicken makes an outstanding chicken salad for sandwiches the next day. simply mix the left over chicken and stuffing with mayonnaise. it is hard to get the chicken salad onto the bread without eating it all before hand!",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/11/87/83/picLLZD2e.jpg",
+        "ingredients": [
+          "1 whole chicken (About 3 Pounds, Giblets Reserved)",
+          "1 1⁄2 teaspoons salt",
+          "1⁄2 teaspoon fresh ground pepper",
+          "4 tablespoons butter",
+          "1 medium onion, Chopped",
+          "1⁄4 cup pine nuts",
+          "1 cup rice (Organic Jasmine or Organic Brown is Awesome)",
+          "1⁄4 cup raisins",
+          "2 tablespoons fresh parsley"
+        ],
+        "minutes": 110,
+        "model_ingredients": [
+          "chicken",
+          "salt",
+          "fresh_ground_pepper",
+          "butter",
+          "onion",
+          "pine_nuts",
+          "rice",
+          "raisins",
+          "fresh_parsley"
+        ],
+        "name": "roast chicken with rice and pine nut stuffing",
+        "protein": 95,
+        "rid": "118783",
+        "satFat": 88,
+        "servings": "4",
+        "sodium": 46,
+        "steps": "Preheat oven to 375; Rinse Chicken and pat dry; Season inside and out with ½ Teaspoon Salt and ¼ Teaspoon Pepper: Coarsely Chop Giblets.\r\nIn a large saucepan, melt 2 Tablespoons of Butter over medium heat; Add Onions and cook until soft, 3-5 minutes; Add Giblets & Pine Nuts; Cook, stirring, until Giblets are no longer pink; Stir in Rice, Raisins, Parsley, remaining Salt & Pepper, and 2 ¼ Cups of Water; Bring to boil, reduce heat to low, cover and simmer for 25 minutes, until rice has absorbed liquid.\r\nStuff cavity loosely with Rice Mixture; spoon remainder into a lightly buttered baking dish. Tie chicken legs or make slit on one side of opening and pull drumstick through hole to close opening; Place in roasting pan and brush Chicken with remaining Butter (Melted); Bake for 1 ½ hours, basting with pan juices every 20 minutes, until juices run clear, and heat remaining Stuffing in oven during last half-hour of roasting time.",
+        "sugar": 27,
+        "tags": [
+          "toddler-friendly",
+          "main-dish",
+          "chicken",
+          "kid-friendly",
+          "chicken",
+          "whole-chicken",
+          "romantic",
+          "dinner-party",
+          "4-hours-or-less",
+          "meat",
+          "3-steps-or-less",
+          "poultry",
+          "easy"
+        ],
+        "totalFat": 80
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.8404804
+        },
+        "cal": 431.3,
+        "carbs": 1,
+        "description": "serve this meatless pizza with a tossed salad to create a meal.",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/39/91/2/eOKqAY7QLGo4SGDujf3g_pizza3.jpg",
+        "ingredients": [
+          "1 pizza dough (bread machine, prepared, mix, etc.)",
+          "1 cup mushroom, sliced",
+          "1⁄2 teaspoon garlic, minced",
+          "2 tablespoons olive oil",
+          "2⁄3 cup spinach, chopped",
+          "1 tomatoes, sliced",
+          "1⁄4 cup basil, chopped",
+          "3 cups mozzarella cheese, grated"
+        ],
+        "minutes": 20,
+        "model_ingredients": [
+          "pizza_dough",
+          "mushroom",
+          "garlic",
+          "olive_oil",
+          "spinach",
+          "tomatoes",
+          "basil",
+          "mozzarella_cheese"
+        ],
+        "name": "spinach and mushroom pizza",
+        "protein": 52,
+        "rid": "39912",
+        "satFat": 80,
+        "servings": "3",
+        "sodium": 29,
+        "steps": "Heat the oil in a skillet.\nAdd the mushrooms and garlic.\nCook until just soft.\nSet aside.\nTop the crust with 1/2 of the cheese.\nAdd the tomatoes, basil, spinach (squeeze out any excess moisture) and mushrooms.\nTop with the remaining cheese.\nBake at 400 for 10 minutes (or until lightly browned).",
+        "sugar": 10,
+        "tags": [
+          "breakfast",
+          "winter",
+          "fall",
+          "main-dish",
+          "one-dish-meal",
+          "vegetarian",
+          "kid-friendly",
+          "lunch",
+          "pizza",
+          "summer",
+          "beginner",
+          "spring",
+          "30-minutes-or-less",
+          "seasonal",
+          "easy"
+        ],
+        "totalFat": 52
+      },
+      1
+    ],
+    [
+      {
+        "_additional": {
+          "certainty": 0.8400457
+        },
+        "cal": 737.9,
+        "carbs": 27,
+        "description": "yummy fish pie",
+        "image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/94/36/picNoolEG.jpg",
+        "ingredients": [
+          "500 g fish, cut into cubes (fresh and/or smoked fish)",
+          "8 medium potatoes",
+          "1 onion",
+          "1 medium carrot",
+          "1 tablespoon seeded mustard",
+          "300 ml cream",
+          "3 eggs",
+          "1 cup spinach",
+          "1 lemon, juice of",
+          "1 cup shaved parmesan cheese",
+          "3 tablespoons chopped parsley",
+          "olive oil",
+          "sea salt",
+          "pepper"
+        ],
+        "minutes": 60,
+        "model_ingredients": [
+          "fish",
+          "potato",
+          "onion",
+          "carrot",
+          "mustard",
+          "cream",
+          "egg",
+          "spinach",
+          "lemon,_juice_of",
+          "parmesan_cheese",
+          "parsley",
+          "olive_oil",
+          "sea_salt",
+          "pepper"
+        ],
+        "name": "yummy fish pie",
+        "protein": 51,
+        "rid": "9436",
+        "satFat": 102,
+        "servings": "4-6",
+        "sodium": 22,
+        "steps": "Dice onions and carrots and gently cook in a pan with a little olive oil until softened.\nReduce the heat and add the cream, seeded mustard, parmesan cheese and lemon juice.\nBoil potatoes until nearly cooked.\nAdd the eggs to the water to hard boil.\nThis saves another pot.\nThe spinach needs to be washed and cooked so this can also be done with the same pot.\nSimply put spinach into a steamer and place over boiling water.\nPut cubed fish into a deep dish.\nAdd roughly chopped spinach and hard boiled eggs.\nPour the cream sauce evenly over.\nMash potatoes using lots of salt and pepper to give flavor and olive oil instead of milk This will make the topping really crispy.\nPile potaroes on top of the fish and bake at 180 until hot and crispy.\nEnjoy and try with a nice drop of Sauvignon Blanc.",
+        "sugar": 24,
+        "tags": [
+          "oven",
+          "australian",
+          "winter",
+          "english",
+          "fall",
+          "main-dish",
+          "north-american",
+          "kid-friendly",
+          "lunch",
+          "60-minutes-or-less",
+          "american",
+          "european",
+          "seafood",
+          "south-west-pacific",
+          "seasonal"
+        ],
+        "totalFat": 53
+      },
+      1
+    ]
+  ]
+}
