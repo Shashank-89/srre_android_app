@@ -35,7 +35,7 @@ object RetrofitModule {
 
         return Retrofit.Builder()
 //        https://4c3f-20-120-216-46.ngrok.io/search
-            .baseUrl("https://50ec-20-120-216-46.ngrok.io")
+            .baseUrl("https://c1c1-20-120-216-46.ngrok.io")
             .client(httpClient.build())
             .addConverterFactory(GsonConverterFactory.create(gson))
     }

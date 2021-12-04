@@ -27,7 +27,11 @@ class OnboardingRepository @Inject constructor(
     //get cuisines (tags), allergens (ingredients)
     fun getAllIngredients(): Flow<DataState<List<String>>> = flow {
         emit(DataState.Loading)
-        val ingredientList = appContext.assets.open("ingredients.csv").bufferedReader().readLines()
+        val rawIngredientList = appContext.assets.open("ingredients.csv").bufferedReader().readLines()
+        val ingredientList = mutableListOf<String>()
+        rawIngredientList.onEach {
+            if(it.isNotEmpty()) ingredientList.add(it)
+        }
         Log.e("getAllIngredients","after list populated!! size : " + ingredientList.size)
         emit(DataState.Success(
             ingredientList
